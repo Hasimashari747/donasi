@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mitra', function(){
+    return view('mitra');
+})->middleware('auth');
+
 Route::get('/donatur', function(){
     return view('donatur');
 })->middleware('auth');
