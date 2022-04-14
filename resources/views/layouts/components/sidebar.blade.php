@@ -10,32 +10,32 @@
             </li>
 
             <li class="sidebar-item active">
-                <a class="sidebar-link" href="index.html">
+                <a class="sidebar-link" href="/dashboard">
       <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
     </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="Donatur">
-      <i class="align-middle" data-feather="user"></i> <span class="align-middle">Donatur</span>
+                <a class="sidebar-link" href="/mitra">
+      <i class="align-middle" data-feather="user"></i> <span class="align-middle">mitra</span>
     </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-sign-in.html">
-      <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+                <a class="sidebar-link" href="pages-Donatur.html">
+      <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Donatur</span>
     </a>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="pages-sign-up.html">
-      <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
+      <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Total user</span>
     </a>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="pages-blank.html">
-      <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
+      <i class="align-middle" data-feather="book"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
@@ -45,19 +45,19 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-buttons.html">
-      <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
+      <i class="align-middle" data-feather="square"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-forms.html">
-      <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
+      <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="ui-cards.html">
-      <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
+      <i class="align-middle" data-feather="grid"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
@@ -69,7 +69,7 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="icons-feather.html">
-      <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
+      <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
@@ -79,13 +79,13 @@
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="charts-chartjs.html">
-      <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
+      <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">-</span>
     </a>
             </li>
 
             <li class="sidebar-item">
                 <a class="sidebar-link" href="maps-google.html">
-      <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+      <i class="align-middle" data-feather="map"></i> <span class="align-middle">-</span>
     </a>
             </li>
         </ul>
