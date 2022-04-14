@@ -88,9 +88,9 @@
 					<div class="d-table-cell align-middle">
 
 						<div class="text-center mt-4">
-							<h1 class="h2">Welcome Admin</h1>
+							<h1 class="h2">Selamat Datang Admin</h1>
 							<p class="lead">
-								Sign in to your account to continue
+								Masuk ke akun Anda untuk melanjutkan
 							</p>
 						</div>
 
@@ -98,7 +98,7 @@
 							<div class="card-body">
 								<div class="m-sm-4">
 									<div class="text-center">
-										<img src="{{asset("assets/img/avatars/avatar.jpg")}}" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
+										<img src="{{asset("assets/img/avatars/avatar1.jpeg")}}" alt="Charles Hall" class="img-fluid rounded-circle" width="132" height="132" />
 									</div>
 									<form method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -110,20 +110,21 @@
 											<label class="form-label">Password</label>
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" />
 											<small>
-                                            <a href="index.html">Forgot password?</a>
+                                            <a href="index.html">Lupa password?</a>
                                             </small>
 										</div>
 										<div>
 											<label class="form-check">
                                             <input class="form-check-input" type="checkbox" value="remember-me" name="remember-me" checked>
                                             <span class="form-check-label">
-                                            Remember me next time
+                                           Ingat ini lain kali.
                                             </span>
                                         </label>
 										</div>
 										<div class="text-center mt-3">
 											{{-- <a href="index.html" class="btn btn-lg btn-primary">Sign in</a> --}}
-											<button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+											<button type="submit" class="btn btn-lg btn-primary">Masuk</button><br> <br>
+                                            <span>Silahkan daftarkan akun anda <a href="{{ route('register')}}">Disini</a></span>
 										</div>
 									</form>
 								</div>
