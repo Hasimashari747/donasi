@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mitra', function(){
-    return view('mitra');
-})->middleware('auth');
+Route::resource('/program', ProgramController::class);
+
+// Route::get('/simpanprogram', function(){
+//     return view('simpanprogram');
+// })->middleware('auth')->name('simpan.program'); 
 
 Route::get('/donatur', function(){
     return view('donatur');

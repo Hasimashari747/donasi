@@ -16,8 +16,8 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="/mitra">
-      <i class="align-middle" data-feather="user"></i> <span class="align-middle">Mitra</span>
+                <a class="sidebar-link" href="/program">
+      <i class="align-middle" data-feather="user"></i> <span class="align-middle">Program</span>
     </a>
             </li>
 
@@ -32,11 +32,6 @@
       <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Total User</span>
     </a>
             </li>
-
-       
-
-            
-
             <li class="sidebar-item">
                 <a class="sidebar-link" href="maps-google.html">
       <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
