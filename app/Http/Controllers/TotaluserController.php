@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TotaluserController extends Controller
@@ -13,7 +14,8 @@ class TotaluserController extends Controller
      */
     public function index()
     {
-        return view('totaluser');
+        $totaluser= User::all();
+        return view('totaluser', compact('totaluser'));
     }
 
     /**
@@ -23,6 +25,7 @@ class TotaluserController extends Controller
      */
     public function create()
     {
+        
         return view('totaluser');
     }
 

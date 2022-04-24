@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Donation;
 use Illuminate\Http\Request;
 
 class DonaturController extends Controller
@@ -13,7 +14,8 @@ class DonaturController extends Controller
      */
     public function index()
     {
-        return view('donatur');
+        $donatur = Donation::all();
+        return view('donatur', compact('donatur'));
     }
 
     /**
