@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Program;
 use Illuminate\Http\Request;
 
-class ProgramController extends Controller
+class DonaturController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $programs= Program::all();
-        
-        return view('program', compact('programs'));
+        return view('donatur');
     }
 
     /**
@@ -26,7 +23,7 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        return view('tambahprogram');
+        return view('tambahdonatur');
     }
 
     /**
@@ -38,20 +35,6 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         
-    //upload image
-    $image = $request->file('banner');
-    $image->storeAs('public/blogs', $image->hashName());
-
- Program::create([
-        'banner'     => $image->hashName(),
-        'title'     => $request->title,
-        'story'   => $request->story,
-        'activity'   => $request->activity,
-        'incoming_donation'   => $request->incoming_donation
-    ]);
-
-    return back();
-
     }
 
     /**

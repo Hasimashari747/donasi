@@ -7,32 +7,30 @@
   <div class="card-body">
   <div class="row">
     <div class="col-xl-12 col-xxl-12 ">
-      <form>
+      <form action="{{ route('program.store')}}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Banner</label>
-          <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Tambahkan Benner</div>
+          <label for="" class="form-label">Banner</label>
+          <input type="file" class="form-control" id="" name="banner">
+          <div id="" class="form-text">Tambahkan Benner</div>
         </div>
         <div class="mb-3">
           <label for="exampleInputtitle" class="form-label">Title</label>
-          <input type="text" class="form-control" id="exampleInputTitle">
+          <input type="text" class="form-control" id="exampleInputTitle" name="title">
         </div>
         <div class="mb-3">
           <label for="exampleInputCerita" class="form-label">Cerita</label>
-          <input type="text" class="form-control" id="exampleInputCerita">
+          <input type="text" class="form-control" id="exampleInputCerita" name="story">
         </div>
         <div class="mb-3">
           <label for="exampleInputAktivitas" class="form-label">aktivitas</label>
-          <input type="text" class="form-control" id="exampleInputAktivitas">
+          <input type="text" class="form-control" id="exampleInputAktivitas" name="activity">
         </div>
         <div class="mb-3">
           <label for="exampleInputDonasiMasuk" class="form-label">Donasi Masuk</label>
-          <input type="text" class="form-control" id="exampleInputDonasiMasuk">
+          <input type="text" class="form-control" id="exampleInputDonasiMasuk" name="incoming_donation">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
+      
         <button type="submit" class="btn btn-primary">Simpan Data</button>
         <button type="submit" class="btn btn-primary">Kembali</button>
     </form>

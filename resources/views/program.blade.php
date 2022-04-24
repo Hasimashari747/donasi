@@ -17,8 +17,19 @@
 								<th>Aktivitas</th>
 								<th class="d-none d-md-table-cell">Donasi Masuk</th>
 							</tr>
+							<button type="submit" class="btn btn-primary">Edit</button>
 						</thead>
-						
+						<tbody>
+							@foreach($programs as $program)
+								<tr>
+									<td>{{ $program->banner }}</td>
+									<td>{{ $program->title}}</td>
+									<td>{{ $program->story}}</td>
+									<td>{{ $program->activity}}</td>
+									<td>{{ $program->incoming_donation}}</td>
+								</tr>
+							@endforeach
+						</tbody>
 					</table>
 				</div>  
 			</div>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\TotaluserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,20 @@ Route::resource('/program', ProgramController::class);
 //     return view('simpanprogram');
 // })->middleware('auth')->name('simpan.program'); 
 
-Route::get('/donatur', function(){
-    return view('donatur');
-})->middleware('auth');
+Route::resource('/donatur', DonaturController::class);
+//Route::get('/donatur', function(){
+    //return view('donatur');
+//})->middleware('auth')->name('donatur');
+
+//Route::get('/tambahdonatur', function(){
+   // return view('tambahdonatur');
+//})->middleware('auth')->name('tambah.donatur');
+
+Route::resource('/totaluser', TotaluserController::class);
+//Route::get('/totaluser', function(){
+    //return view('totaluser');
+//})->middleware('auth')->name('totaluser');
+
 
 Route::get('/profile', function(){
     return view('profile');

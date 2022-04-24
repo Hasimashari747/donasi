@@ -22,13 +22,13 @@
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-Donatur.html">
+                <a class="sidebar-link" href="/donatur">
       <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Donatur</span>
     </a>
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="pages-sign-up.html">
+                <a class="sidebar-link" href="/totaluser">
       <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Total User</span>
     </a>
             </li>

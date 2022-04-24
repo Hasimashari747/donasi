@@ -7,7 +7,7 @@
 		<div class="w-100">
 			<div class="row">
 				<div class="col-sm-12">
-                <a href="/donatur" class="btn btn-primary">Donatur</a>
+                <a href="{{ route('donatur.create')}}" class="btn btn-primary">Tambah Donatur</a>
                     <table class="table table-hover my-0">
                         <thead>
                             <tr>
