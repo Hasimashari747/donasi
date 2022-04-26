@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('image_program');
             $table->foreignId('id_program')->constrained('programs');
-            $table->timestamps();
         });
     }
 

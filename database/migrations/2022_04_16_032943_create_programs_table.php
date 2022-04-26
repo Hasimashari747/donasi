@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('banner');
             $table->string('title');
             $table->string('story');
-            $table->string('activity');
             $table->string('incoming_donation');
-            $table->timestamps();
         });
     }
 

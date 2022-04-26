@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('bukti_donasi');
             $table->foreignId('id_program')->constrained('programs');
             $table->foreignId('id_user')->constrained('users');
-            $table->timestamps();
         });
     }
 

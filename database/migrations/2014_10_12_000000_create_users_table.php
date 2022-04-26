@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', [1, 2]);
             $table->string('image');
@@ -26,7 +25,6 @@ return new class extends Migration
             $table->date('tgl_lahir');
             $table->string('no_hp');
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 
