@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('role', [1, 2]);
-            $table->string('image');
-            $table->string('alamat');
-            $table->enum('jenis_kelamin', ['L', 'P']);
-            $table->date('tgl_lahir');
-            $table->string('no_hp');
+            $table->string('image')->nullable();
+            $table->string('alamat')->nullable();;
+            $table->enum('jenis_kelamin',  ['L', 'P'])->nullable();;
+            $table->date('tgl_lahir')->nullable();;
+            $table->string('no_hp')->nullable();;
             $table->rememberToken();
         });
     }
