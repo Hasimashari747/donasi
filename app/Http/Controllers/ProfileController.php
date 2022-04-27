@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Program;
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class ProgramController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        $programs= Program::all();
+        $profile = User::orderBy('id', 'DESC')->get();
         
-        return view('program', compact('programs'));
+        return view('profile', compact('profile'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        return view('tambahprogram');
+        //
     }
 
     /**
@@ -37,20 +37,7 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        
-    //upload image
-    $image = $request->file('banner');
-    $image->storeAs('public/blogs', $image->hashName());
-
- Program::create([
-        'banner'     => $image->hashName(),
-        'title'     => $request->title,
-        'story'   => $request->story,
-        'incoming_donation'   => $request->incoming_donation
-    ]);
-
-    return back();
-
+        //
     }
 
     /**

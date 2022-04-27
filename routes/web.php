@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TotaluserController;
 
 /*
@@ -41,9 +42,7 @@ Route::resource('/totaluser', TotaluserController::class);
 //})->middleware('auth')->name('totaluser');
 
 
-Route::get('/profile', function(){
-    return view('profile');
-})->middleware('auth');
+Route::resource('/profile', ProfileController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

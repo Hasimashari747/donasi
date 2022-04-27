@@ -23,10 +23,6 @@
           <input type="text" class="form-control" id="exampleInputCerita" name="story">
         </div>
         <div class="mb-3">
-          <label for="exampleInputAktivitas" class="form-label">aktivitas</label>
-          <input type="text" class="form-control" id="exampleInputAktivitas" name="activity">
-        </div>
-        <div class="mb-3">
           <label for="exampleInputDonasiMasuk" class="form-label">Donasi Masuk</label>
           <input type="text" class="form-control" id="exampleInputDonasiMasuk" name="incoming_donation">
         </div>

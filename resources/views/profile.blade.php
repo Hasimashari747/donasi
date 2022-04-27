@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">Edit Profile</div>
-                        <form action="{{ route('update.profile', Auth::user()->id)}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('profile.update', Auth::user()->id)}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="mb-3">
