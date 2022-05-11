@@ -32,9 +32,9 @@
       <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Total User</span>
     </a>
             </li>
-            <li class="sidebar-item {{ Request::is('maps*') ? 'active' : null }}">
-                <a class="sidebar-link" href="maps-google.html">
-      <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
+            <li class="sidebar-item {{ Request::is('laporan*') ? 'active' : null }}">
+                <a class="sidebar-link" href="/laporan">
+      <i class="align-middle" data-feather="map"></i> <span class="align-middle">Laporan</span>
     </a>
             </li>
         </ul>

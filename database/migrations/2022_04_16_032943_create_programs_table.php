@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('programs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('banner');
             $table->string('title');
             $table->string('story');
+            // $table->string('description');
             $table->string('incoming_donation');
         });
     }

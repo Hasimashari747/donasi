@@ -40,16 +40,16 @@ class ProgramController extends Controller
         
     //upload image
     $image = $request->file('banner');
-    $image->storeAs('public/blogs', $image->hashName());
+    $image->storeAs('/blogs', $image->hashName());
 
- Program::create([
+    Program::create([
         'banner'     => $image->hashName(),
         'title'     => $request->title,
         'story'   => $request->story,
         'incoming_donation'   => $request->incoming_donation
     ]);
 
-    return back();
+    return redirect()->route('program.index');
 
     }
 
@@ -72,7 +72,9 @@ class ProgramController extends Controller
      */
     public function edit($id)
     {
-        //
+        $programId = Program::find($id);
+        // dd($programId);
+        return view('edit', compact('programId'));
     }
 
     /**
@@ -84,7 +86,39 @@ class ProgramController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+          //get data Blog by ID
+    $blog = Program::findOrFail($id);
+
+    if($request->file('image') == "") {
+
+        $blog->update([
+            'title'     => $request->title,
+            'story'     => $request->story,
+            'incoming_donation'   => $request->incoming_donation
+        ]);
+
+    } else {
+
+        //hapus old image
+        \Storage::disk('local')->delete('/blogs/'.$blog->image);
+
+        //upload new image
+        $image = $request->file('image');
+        $image->storeAs('public/blogs', $image->hashName());
+
+        $blog->update([
+            'banner'     => $image->hashName(),
+            'title'     => $request->title,
+            'story'   => $request->story,
+            'incoming_donation'   => $request->incoming_donation
+        ]);
+
+    }
+
+    return back();
+
+
     }
 
     /**
@@ -95,6 +129,10 @@ class ProgramController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $programs=Program::findOrFail($id);
+        $programs->delete();
+
+        return back();
+
     }
 }

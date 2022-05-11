@@ -14,9 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('image_donations', function (Blueprint $table) {
-            $table->id();
+            $table->increments('image_id');
             $table->string('image_program');
-            $table->foreignId('id_program')->constrained('programs');
+            $table->unsignedInteger('program_id');
+
+            $table->foreign('program_id')->references('id')->on('programs');
+
         });
     }
 

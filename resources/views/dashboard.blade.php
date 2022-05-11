@@ -12,7 +12,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title">Sales</h5>
+									<h5 class="card-title">program</h5>
 								</div>
 
 								<div class="col-auto">
@@ -32,7 +32,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title">Visitors</h5>
+									<h5 class="card-title">Total User</h5>
 								</div>
 
 								<div class="col-auto">
@@ -54,7 +54,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col mt-0">
-									<h5 class="card-title">Earnings</h5>
+									<h5 class="card-title">Donatur</h5>
 								</div>
 
 								<div class="col-auto">

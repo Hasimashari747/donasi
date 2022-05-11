@@ -14,11 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('donations', function (Blueprint $table) {
-            $table->id();
-            $table->date('tgl_donasi');
-            $table->string('bukti_donasi');
-            $table->foreignId('id_program')->constrained('programs');
-            $table->foreignId('id_user')->constrained('users');
+            $table->increments('id');
+            $table->date('date_donation');
+            $table->string('bukti_donation');
+            $table->unsignedInteger('program_id');
+            $table->unsignedInteger('user_id');
+
+            $table->foreign('program_id')->references('id')->on('programs');
+            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreignId('program_id')->constrained('programs');
+            // $table->foreignId('user_id')->constrained('users');
         });
     }
 
