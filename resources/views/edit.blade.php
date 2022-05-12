@@ -4,6 +4,9 @@
 <h1>Edit Program</h1>
 
 <div class="card">
+  @if(Session::has('message'))
+    {{Session::get('message')}}
+  @endif
   <div class="card-body">
   <div class="row">
     <div class="col-xl-12 col-xxl-12 ">

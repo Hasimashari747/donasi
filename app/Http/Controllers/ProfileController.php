@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class ProfileController extends Controller
 {
@@ -59,7 +60,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $programId = Profile::find($id)->get();
+        return view('edit', compact('programId'));
     }
 
     /**
@@ -71,7 +73,11 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->user()->update(
+            $request->all()
+        );
+
+        return back()->with('success','Berhasil Diupdate');
     }
 
     /**

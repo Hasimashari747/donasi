@@ -75,6 +75,8 @@ class ProgramController extends Controller
         $programId = Program::find($id);
         // dd($programId);
         return view('edit', compact('programId'));
+
+        return back()->with('success','Berhasil Diupdate');
     }
 
     /**
@@ -113,6 +115,8 @@ class ProgramController extends Controller
             'story'   => $request->story,
             'incoming_donation'   => $request->incoming_donation
         ]);
+
+        return redirect()->route('program.index');
 
     }
 
