@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DonaturController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TotaluserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,8 +46,9 @@ Route::resource('/totaluser', TotaluserController::class);
 
 Route::resource('/profile', ProfileController::class);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->name('dashboard');
+//Route::get('/dashboard', function () {
+    //return view('dashboard');
+//})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Program;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProgramController extends Controller
 {
@@ -75,8 +77,6 @@ class ProgramController extends Controller
         $programId = Program::find($id);
         // dd($programId);
         return view('edit', compact('programId'));
-
-        return back()->with('success','Berhasil Diupdate');
     }
 
     /**
@@ -103,7 +103,7 @@ class ProgramController extends Controller
     } else {
 
         //hapus old image
-        \Storage::disk('local')->delete('/blogs/'.$blog->image);
+        Storage::disk('local')->delete('/blogs/'.$blog->image);
 
         //upload new image
         $image = $request->file('image');
@@ -120,7 +120,9 @@ class ProgramController extends Controller
 
     }
 
-    return back();
+
+    Alert::success('Data diedit', 'Berhasil mengedit data');
+    return redirect()->route('program.index');
 
 
     }
@@ -136,6 +138,7 @@ class ProgramController extends Controller
         $programs=Program::findOrFail($id);
         $programs->delete();
 
+        Alert::success('Data Terhapus', 'Berhasil menghapus data');
         return back();
 
     }

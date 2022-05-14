@@ -138,6 +138,8 @@ return [
 
     'providers' => [
 
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -189,6 +191,7 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+   
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...

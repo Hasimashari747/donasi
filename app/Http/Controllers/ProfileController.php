@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Symfony\Component\HttpKernel\Profiler\Profile;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
 {
@@ -76,7 +77,7 @@ class ProfileController extends Controller
         $request->user()->update(
             $request->all()
         );
-
+        Alert::success('Data diedit', 'Berhasil mengedit data');
         return back()->with('success','Berhasil Diupdate');
     }
 

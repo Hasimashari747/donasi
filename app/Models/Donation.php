@@ -10,4 +10,14 @@ class Donation extends Model
     use HasFactory;
 
     protected $guarded=[];
+
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

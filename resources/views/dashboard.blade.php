@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="row">
 	<div class="col-xl-6 col-xxl-5 d-flex">
 		<div class="w-100">
@@ -17,7 +16,7 @@
 
 								<div class="col-auto">
 									<div class="stat text-primary">
-										<i class="align-middle" data-feather="truck"></i>
+										<i class="align-middle" data-feather="map"></i>
 									</div>
 								</div>
 							</div>
