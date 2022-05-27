@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\{Donation, Program, User};
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,7 +15,11 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        
-        return view('dashboard', compact(''));
+        $totalprogram = Program::count();
+        $totaluser = User::count();
+        $totaldonation = Donation::count();
+        //dd($count);
+       return view('dashboard', compact("totalprogram", "totaluser", "totaldonation"));
     }
+    
 }

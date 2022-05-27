@@ -1,53 +1,77 @@
 @extends('layouts.app')
 
+@push('style')
+	<link rel="stylesheet" href="//cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">
+@endpush
+
 @section('content')
 
 <h1 class="header-title">Data Program</h1>
+
 <div class="row">
 	<div class="col-xl-12 col-xxl-5 d-flex">
 		<div class="w-100">
 			<div class="row">
 				<div class="col-sm-12">
-                <a href="{{ route('program.create')}}" class="btn btn-primary">Tambah program</a>
-                    <table class="table table-hover my-0">
+					<a href="{{ route('program.create')}}" class="btn btn-primary">Tambah program</a>
+                
+				<div class="table-responsive">
+                    <table class="table table-hover" id="tableProgram">
 						<thead>
+
 							<tr>
-								
-								<th scope="col">Banner</th>
-								<th scope="col">Title</th>
-								<th scope="col">Cerita</th>
-								<th scope="col">Donasi Masuk</th>
-								<th scope="col" colspan="2">Aksi</th>
-								
+								<th>Banner</th>
+								<th>Nama panti</th>
+								<th>Deskripsi</th>
+								<th>lokasi</th>
+								<th>kontak</th>
+								<th>nomor rekening</th>
+								<th>Target Donasi</th>
+								<th>Aksi</th>
 							</tr>
 						
 						</thead>
 						<tbody>
+
 							@foreach($programs as $program)
 								<tr>
 									<td>
-										<img src="{{ url('storage/blogs/'.$program->banner) }}" width="200" height="200" alt="banners">
+										<img src="{{ url('storage/blogs/'.$program->banner) }}" width="175" height="100" alt="banners"> 
 									</td>
-									<td>{{ $program->title}}</td>
-									<td>{{ $program->story}}</td>
-									<td>{{ $program->incoming_donation}}</td>
-									<td>   
+									<td>{{ $program->nama_panti}}</td>
+									<td>{{ $program->deskripsi}}</td>
+									<td>{{ $program->lokasi}}</td>
+									<td>{{ $program->kontak}}</td>
+									<td>{{ $program->nomor_rekening}}</td>
+									<td>{{ $program->target_donation}}</td>
+									<td> 
+										<a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-lg">Edit</a>  
 										<form action="{{ route('program.destroy', $program->id) }}" method="post">
 										@csrf
 										@method('DELETE')
 											<button class="btn btn-danger">Hapus</button>
 										</form>
 									</td>
-									<td>
-										<a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-lg">Edit</a>
-									</td>
 								</tr>
 							@endforeach
+
 						</tbody>
 					</table>
+					</div>
 				</div>  
 			</div>
 		</div>
 	</div>
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="//cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+
+	<script>
+		$(document).ready( function () {
+				$('#tableProgram').DataTable();
+			} );
+	</script>
+@endpush

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProgramRequest;
 use App\Models\Program;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -37,7 +37,7 @@ class ProgramController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProgramRequest $request)
     {
         
     //upload image
@@ -46,10 +46,15 @@ class ProgramController extends Controller
 
     Program::create([
         'banner'     => $image->hashName(),
-        'title'     => $request->title,
-        'story'   => $request->story,
-        'incoming_donation'   => $request->incoming_donation
+        'nama_panti'     => $request->nama_panti,
+        'deskripsi'   => $request->deskripsi,
+        'lokasi'   => $request->lokasi,
+        'kontak'   => $request->kontak,
+        'nomor_rekening'   => $request->nomor_rekening,
+        'target_donation'   => $request->target_donation
     ]);
+
+    
 
     return redirect()->route('program.index');
 
@@ -86,7 +91,7 @@ class ProgramController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProgramRequest $request, $id)
     {
 
           //get data Blog by ID
@@ -95,9 +100,12 @@ class ProgramController extends Controller
     if($request->file('image') == "") {
 
         $blog->update([
-            'title'     => $request->title,
-            'story'     => $request->story,
-            'incoming_donation'   => $request->incoming_donation
+        'nama_panti'     => $request->nama_panti,
+        'deskripsi'   => $request->deskripsi,
+        'lokasi'   => $request->lokasi,
+        'kontak'   => $request->kontak,
+        'nomor_rekening'   => $request->nomor_rekening,
+        'target_donation'   => $request->target_donation
         ]);
 
     } else {

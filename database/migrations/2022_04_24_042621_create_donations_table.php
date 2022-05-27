@@ -17,8 +17,10 @@ return new class extends Migration
             $table->increments('id');
             $table->date('date_donation');
             $table->string('bukti_donation');
+            $table->integer('jumlah_donasi');
             $table->unsignedInteger('program_id');
             $table->unsignedInteger('user_id');
+
 
             $table->foreign('program_id')->references('id')->on('programs');
             $table->foreign('user_id')->references('id')->on('users');

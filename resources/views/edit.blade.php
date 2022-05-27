@@ -19,20 +19,31 @@
           <div id="" class="form-text">Tambahkan Benner</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputtitle" class="form-label">Title</label>
-          <input type="text" class="form-control" id="exampleInputTitle" name="title"  value="{{ $programId->title }}">
+          <label for="exampleInputtitle" class="form-label">nama panti</label>
+          <input type="text" class="form-control" id="exampleInputTitle" name="nama_panti"  value="{{ $programId->nama_panti }}">
         </div>
         <div class="mb-3">
-          <label for="exampleInputCerita" class="form-label">Cerita</label>
-          <input type="text" class="form-control" id="exampleInputCerita" name="story" value="{{ $programId->story }}">
+          <label for="exampleInputCerita" class="form-label">deskripsi</label>
+          <input type="text" class="form-control" id="exampleInputCerita" name="deskripsi" value="{{ $programId->deskripsi }}">
         </div>
         <div class="mb-3">
-          <label for="exampleInputDonasiMasuk" class="form-label">Donasi Masuk</label>
-          <input type="text" value="{{ $programId->incoming_donation }}" class="form-control" id="exampleInputDonasiMasuk" name="incoming_donation">
+          <label for="exampleInputDonasiMasuk" class="form-label">lokasi</label>
+          <input type="text" value="{{ $programId->lokasi }}" class="form-control" id="exampleInputDonasiMasuk" name="lokasi">
         </div>
-      
+        <div class="mb-3">
+          <label for="exampleInputDonasiMasuk" class="form-label">kontak</label>
+          <input type="text" value="{{ $programId->kontak }}" class="form-control" id="exampleInputDonasiMasuk" name="kontak">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDonasiMasuk" class="form-label">nomor rekening</label>
+          <input type="text" value="{{ $programId->nomor_rekening }}" class="form-control" id="exampleInputDonasiMasuk" name="nomor_rekening">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDonasiMasuk" class="form-label">Target Donasi</label>
+          <input type="text" value="{{ $programId->target_donation }}" class="form-control" id="exampleInputTargetDonasi" name="target_donation">
+        </div>
         <button type="submit" class="btn btn-primary">Ubah Data</button>
-        
+        {{-- <button type="submit" class="btn btn-primary">Cancel</button> --}}
     </form>
     </div>
   </div>

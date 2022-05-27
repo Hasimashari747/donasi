@@ -159,27 +159,28 @@ a:not([href]):not([tabindex]):hover {
 }
 .logo-menu a {
   font-size: 20px;
-  color: #FD6584;
+  color: #00FFDD;
 }
 .menu-bg {
-  background-color: #fff!important;
+  background-color: #0E185F!important;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   z-index: 999;
   padding: 3px;
 }
 .menu-bg .menu-button {
   top: 0;
+  color: #00FFDD;
 }
 .menu-bg .menu-button:hover {
   cursor: pointer;
   color: #4676fa;
 }
 .menu-bg .logo-menu a {
-  color: #4676fa;
+  color: #00FFDD;
 }
 .menu-button:hover {
   cursor: pointer;
-  opacity: #eee;
+  opacity: #00FFDD;
 }
 .close-button {
   cursor: pointer;
@@ -313,15 +314,15 @@ a:not([href]):not([tabindex]):hover {
   padding: 160px 0 80px;
 }
 #video-area .contents h1 {
-  color: #FD6584;
+  color: #00FFDD;
   font-size: 50px;
   font-weight: 600;
   margin-bottom: 25px;
   line-height: 70px;
 }
 #video-area .contents p {
-  font-size: 14px;
-  color: #FD6584;
+  font-size: 20px;
+  color: #00FFDD;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 0.5px;
@@ -345,7 +346,7 @@ a:not([href]):not([tabindex]):hover {
   color: #4676fa;
 }
 .overlay-2 {
-  background: #ffd1d1 !important;
+ background-color: #0b1351 ;
 }
 /* ==========================================================================
    About Section Style

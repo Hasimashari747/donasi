@@ -31,6 +31,7 @@
                 <a class="sidebar-link" href="/totaluser">
       <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Total User</span>
     </a>
+           
             </li>
             <li class="sidebar-item {{ Request::is('laporan*') ? 'active' : null }}">
                 <a class="sidebar-link" href="/laporan">

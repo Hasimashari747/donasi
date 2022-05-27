@@ -20,7 +20,7 @@
                                 <th>Id</th>
                                 <th class="d-none d-xl-table-cell">Name</th>
                                 <th class="d-none d-xl-table-cell">email</th>
-                                <th>password</th>
+                                {{-- <th>password</th> --}}
                                 <th class="d-none d-md-table-cell">role</th>
                                 <th class="d-none d-md-table-cell">image</th>
                                 <th class="d-none d-md-table-cell">alamat</th>
@@ -36,7 +36,7 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
-                                    <td>{{ $item->password }}</td>
+                                    {{-- <td>{{ $item->password }}</td> --}}
                                     <td>{{ ($item->role == 1) ? 'admin' : 'user' }}</td>
                                     <td>{{ $item->image }}</td>
                                     <td>{{ $item->alamat }}</td>

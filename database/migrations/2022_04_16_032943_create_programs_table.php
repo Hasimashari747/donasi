@@ -16,10 +16,13 @@ return new class extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('banner');
-            $table->string('title');
-            $table->string('story');
+            $table->string('nama_panti');
+            $table->string('deskripsi');
+            $table->string('lokasi');
+            $table->string('kontak');
+            $table->string('nomor_rekening');
             // $table->string('description');
-            $table->string('incoming_donation');
+            $table->string('target_donation');
         });
     }
 
