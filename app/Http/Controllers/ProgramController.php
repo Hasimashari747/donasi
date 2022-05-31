@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProgramRequest;
+use App\Models\Donation;
 use App\Models\Program;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -17,7 +18,6 @@ class ProgramController extends Controller
     public function index()
     {
         $programs= Program::all();
-        
         return view('program', compact('programs'));
     }
 
@@ -45,7 +45,7 @@ class ProgramController extends Controller
     $image->storeAs('/blogs', $image->hashName());
 
     Program::create([
-        'banner'     => $image->hashName(),
+        'banner'     => 'blogs/'.$image->hashName(),
         'nama_panti'     => $request->nama_panti,
         'deskripsi'   => $request->deskripsi,
         'lokasi'   => $request->lokasi,
@@ -69,9 +69,10 @@ class ProgramController extends Controller
     public function show($id)
     {
         $programId = Program::find($id);
-        $programs = Program::where('donation_id', '=', $id)
-                            ->where('nama_panti', '=', $programId->nama_panti)->get();
-        return view('detailprogram', compact('programId', 'programs'));
+        
+        $programs = Donation::where('program_id', '=', $programId->id)->get();
+
+        return view('detailprogram', compact( 'programId','programs'));
     }
 
     /**
@@ -83,7 +84,6 @@ class ProgramController extends Controller
     public function edit($id)
     {
         $programId = Program::find($id);
-        // dd($programId);
         return view('edit', compact('programId'));
     }
 
@@ -96,44 +96,56 @@ class ProgramController extends Controller
      */
     public function update(ProgramRequest $request, $id)
     {
-
-    dd("Hello");
           //get data Blog by ID
     $blog = Program::findOrFail($id);
+    // dd($blog->banner);
+    $image = $request->file('banner');
+    $attr = $request->all();
 
-    if($request->file('image') == "") {
-
-        $blog->update([
-            'nama_panti'     => $request->nama_panti,
-            'deskripsi'   => $request->deskripsi,
-            'lokasi'   => $request->lokasi,
-            'kontak'   => $request->kontak,
-            'nomor_rekening'   => $request->nomor_rekening,
-            'target_donation'   => $request->target_donation
-        ]);
-
+    if (request()->file('banner')) {
+        \Storage::delete($blog->banner);
+        $banner = $request->file('banner')->storeAs('/blogs',$image->hashName());
     } else {
-
-        //hapus old image
-        Storage::disk('local')->delete('/blogs/'.$blog->image);
-
-        //upload new image
-        $image = $request->file('image');
-        $image->storeAs('public/blogs', $image->hashName());
-
-        $blog->update([
-            'banner'     => $image->hashName(),
-            'nama_panti'     => $request->nama_panti,
-            'deskripsi'   => $request->deskripsi,
-            'lokasi'   => $request->lokasi,
-            'kontak'   => $request->kontak,
-            'nomor_rekening'   => $request->nomor_rekening,
-            'target_donation'   => $request->target_donation
-        ]);
-
-        return redirect()->route('program.index');
-
+        $banner = $blog->banner;
     }
+
+    $attr['banner'] = $banner;
+    
+    $blog->update($attr);
+
+    // if($request->file('image') == "") {
+
+    //     $blog->update([
+    //         'nama_panti'     => $request->nama_panti,
+    //         'deskripsi'   => $request->deskripsi,
+    //         'lokasi'   => $request->lokasi,
+    //         'kontak'   => $request->kontak,
+    //         'nomor_rekening'   => $request->nomor_rekening,
+    //         'target_donation'   => $request->target_donation
+    //     ]);
+
+    // } else {
+
+    //     //hapus old image
+    //     Storage::disk('local')->delete('/blogs/'.$blog->image);
+
+    //     //upload new image
+    //     $image = $request->file('image');
+    //     $image->storeAs('public/blogs', $image->hashName());
+
+    //     $blog->update([
+    //         'banner'     => $image->hashName(),
+    //         'nama_panti'     => $request->nama_panti,
+    //         'deskripsi'   => $request->deskripsi,
+    //         'lokasi'   => $request->lokasi,
+    //         'kontak'   => $request->kontak,
+    //         'nomor_rekening'   => $request->nomor_rekening,
+    //         'target_donation'   => $request->target_donation
+    //     ]);
+
+    //     return redirect()->route('program.index');
+
+    // }
 
 
     Alert::success('Data diedit', 'Berhasil mengedit data');

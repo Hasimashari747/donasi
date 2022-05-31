@@ -8,7 +8,7 @@
 @section('content')
 <h1 class="header-title">Data User</h1>
 <div class="row">
-	<div class="col-xl-12 col-xxl-5 d-flex">
+	<div class="col-xl-12 col-lg-12 d-flex">
 		<div class="w-100">
 			<div class="row">
 				<div class="col-sm-12">

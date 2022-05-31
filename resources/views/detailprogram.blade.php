@@ -9,7 +9,7 @@
 <h1 class="header-title">Data Donator Program {{ $programId->nama_panti }}</h1>
 
 <div class="row">
-	<div class="col-xl-12 col-xxl-5 d-flex">
+	<div class="col-xl-12 col-lg-12 d-flex">
 		<div class="w-100">
 			<div class="row">
 				<div class="col-sm-12">
@@ -22,7 +22,6 @@
 							<tr>
                                 <th>No.</th>
 								<th>Nama Donatur</th>
-								<th>No Rek</th>
 								<th>Jumlah Donasi</th>
 							</tr>
 						
@@ -32,10 +31,8 @@
 							@foreach($programs as $program)
 								<tr>
 									<td>{{ $loop->iteration}}</td>
-                                    <td>{{ $program->nama_panti }}</td>
-                                    <td>{{ $program->nomor_rekening }}</td>
-                                    <td>{{ $program->donation->jumlah_donasi }}</td>
-
+                                    <td>{{ $program->user->name }}</td>
+                                    <td>{{ $program->jumlah_donasi }}</td>
 								</tr>
 							@endforeach
 

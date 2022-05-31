@@ -33,11 +33,7 @@
     </a>
            
             </li>
-            <li class="sidebar-item {{ Request::is('laporan*') ? 'active' : null }}">
-                <a class="sidebar-link" href="/laporan">
-      <i class="align-middle" data-feather="map"></i> <span class="align-middle">Laporan</span>
-    </a>
-            </li>
+    
         </ul>
 
 

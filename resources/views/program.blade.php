@@ -9,7 +9,7 @@
 <h1 class="header-title">Data Program</h1>
 
 <div class="row">
-	<div class="col-xl-12 col-xxl-5 d-flex">
+	<div class="col-xl-12 col-lg-12 d-flex">
 		<div class="w-100">
 			<div class="row">
 				<div class="col-sm-12">
@@ -26,7 +26,7 @@
 								<th>lokasi</th>
 								<th>kontak</th>
 								<th>nomor rekening</th>
-								{{-- <th>Donatur Terkumpul</th> --}}
+								<th>Donatur Terkumpul</th>
 								<th>Target Donasi</th>
 								<th>Aksi</th>
 							</tr>
@@ -35,16 +35,23 @@
 						<tbody>
 
 							@foreach($programs as $program)
+
+							@php
+								$sumJumlahDonationId = App\Models\Donation::where('program_id', $program->id)->sum('jumlah_donasi');				
+							@endphp
+
 								<tr>
 									<td>
-										<img src="{{ url('storage/blogs/'.$program->banner) }}" width="175" height="100" alt="banners"> 
+										<img src="{{ url('storage/'.$program->banner) }}" width="175" height="100" alt="banners"> 
 									</td>
 									<td>{{ $program->nama_panti}}</td>
 									<td>{{ $program->deskripsi}}</td>
 									<td>{{ $program->lokasi}}</td>
 									<td>{{ $program->kontak}}</td>
 									<td>{{ $program->nomor_rekening}}</td>
-									{{-- <td>{{ $program->donation->jumlah_donasi }}</td> --}}
+									<td>
+										{{ $sumJumlahDonationId }}
+									</td>
 									<td>{{ $program->target_donation}}</td>
 									<td> 	
 										<a href="{{ route('program.show', $program->id) }}" class="btn btn-warning"><i class="fas fa-solid fa-eye"></i>Lihat</a>
