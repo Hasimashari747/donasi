@@ -26,6 +26,7 @@
 								<th>lokasi</th>
 								<th>kontak</th>
 								<th>nomor rekening</th>
+								{{-- <th>Donatur Terkumpul</th> --}}
 								<th>Target Donasi</th>
 								<th>Aksi</th>
 							</tr>
@@ -43,6 +44,7 @@
 									<td>{{ $program->lokasi}}</td>
 									<td>{{ $program->kontak}}</td>
 									<td>{{ $program->nomor_rekening}}</td>
+									{{-- <td>{{ $program->donation->jumlah_donasi }}</td> --}}
 									<td>{{ $program->target_donation}}</td>
 									<td> 	
 										<a href="{{ route('program.show', $program->id) }}" class="btn btn-warning"><i class="fas fa-solid fa-eye"></i>Lihat</a>

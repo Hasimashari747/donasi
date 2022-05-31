@@ -21,16 +21,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('kontak');
             $table->string('nomor_rekening');
-            // $table->string('description');
             $table->string('target_donation');
-            $table->unsignedInteger('donation_id');
-
-            $table->foreign('donation_id')
-                    ->references('id')
-                    ->on('donations')
-                    ->cascadeOnUpdate()
-                    ->cascadeOnDelete();
-            
         });
     }
 

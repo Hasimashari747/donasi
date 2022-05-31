@@ -18,8 +18,8 @@
                                 <th>Id</th>
                                 <th class="d-none d-xl-table-cell">Tanggal Donasi</th>
                                 <th class="d-none d-xl-table-cell">Bukti Donasi</th>
+                                <th>Program</th>
                                 <th class="d-none d-xl-table-cell">Jumlah Donasi</th>
-                                {{-- <th>Program</th> --}}
                                 <th class="d-none d-md-table-cell">User</th>
                                 <th>Status</th>
                                 
@@ -31,8 +31,8 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->date_donation }}</td>
                                     <td>{{ $item->bukti_donation }}</td>
+                                    <td>{{ $item->program->deskripsi }}</td>
                                     <td>{{ $item->jumlah_donasi }}</td>
-                                    {{-- <td>{{ $item->program->deskripsi }}</td> --}}
                                     <td>{{ $item->user->name }}</td>
                                     <td>
                                         <a href="javascript:void(0)" type="submit" class="btn btn-{{ ($item->bukti_donation == null) ? 'danger' : 'success' }} btn-sm">{{ ($item->bukti_donation == null) ? 'pending' : 'lunas' }}</a>                                    </td>

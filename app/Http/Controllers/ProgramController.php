@@ -97,18 +97,19 @@ class ProgramController extends Controller
     public function update(ProgramRequest $request, $id)
     {
 
+    dd("Hello");
           //get data Blog by ID
     $blog = Program::findOrFail($id);
 
     if($request->file('image') == "") {
 
         $blog->update([
-        'nama_panti'     => $request->nama_panti,
-        'deskripsi'   => $request->deskripsi,
-        'lokasi'   => $request->lokasi,
-        'kontak'   => $request->kontak,
-        'nomor_rekening'   => $request->nomor_rekening,
-        'target_donation'   => $request->target_donation
+            'nama_panti'     => $request->nama_panti,
+            'deskripsi'   => $request->deskripsi,
+            'lokasi'   => $request->lokasi,
+            'kontak'   => $request->kontak,
+            'nomor_rekening'   => $request->nomor_rekening,
+            'target_donation'   => $request->target_donation
         ]);
 
     } else {
@@ -122,9 +123,12 @@ class ProgramController extends Controller
 
         $blog->update([
             'banner'     => $image->hashName(),
-            'title'     => $request->title,
-            'story'   => $request->story,
-            'incoming_donation'   => $request->incoming_donation
+            'nama_panti'     => $request->nama_panti,
+            'deskripsi'   => $request->deskripsi,
+            'lokasi'   => $request->lokasi,
+            'kontak'   => $request->kontak,
+            'nomor_rekening'   => $request->nomor_rekening,
+            'target_donation'   => $request->target_donation
         ]);
 
         return redirect()->route('program.index');
