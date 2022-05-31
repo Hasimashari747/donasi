@@ -51,6 +51,6 @@ Route::get('/dashboard', DashboardController::class)->name('dashboard');
 //Route::get('/dashboard', function () {
     //return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');
-Route::resource('/laporan', LaporanController::class);
+// Route::resource('/laporan', LaporanController::class);
 
 require __DIR__.'/auth.php';

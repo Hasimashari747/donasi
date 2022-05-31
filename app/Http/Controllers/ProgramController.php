@@ -68,7 +68,10 @@ class ProgramController extends Controller
      */
     public function show($id)
     {
-        //
+        $programId = Program::find($id);
+        $programs = Program::where('donation_id', '=', $id)
+                            ->where('nama_panti', '=', $programId->nama_panti)->get();
+        return view('detailprogram', compact('programId', 'programs'));
     }
 
     /**

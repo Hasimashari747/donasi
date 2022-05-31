@@ -12,4 +12,9 @@ class Program extends Model
     protected $guarded=[];
 
     public $timestamps = false;
+
+    public function donation()
+    {
+        return $this->belongsTo(Donation::class);
+    }
 }

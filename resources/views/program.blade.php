@@ -44,7 +44,8 @@
 									<td>{{ $program->kontak}}</td>
 									<td>{{ $program->nomor_rekening}}</td>
 									<td>{{ $program->target_donation}}</td>
-									<td> 
+									<td> 	
+										<a href="{{ route('program.show', $program->id) }}" class="btn btn-warning"><i class="fas fa-solid fa-eye"></i>Lihat</a>
 										<a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-lg">Edit</a>  
 										<form action="{{ route('program.destroy', $program->id) }}" method="post">
 										@csrf
@@ -73,5 +74,6 @@
 		$(document).ready( function () {
 				$('#tableProgram').DataTable();
 			} );
+
 	</script>
 @endpush
