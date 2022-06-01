@@ -38,6 +38,9 @@
 
 						</tbody>
 					</table>
+		
+					<a href="{{ URL::previous() }}" class="btn btn-primary"><i class="fas fa-solid fa-eye"></i>Kembali</a>
+					{{-- <button type="submit" class="btn btn-primary">Kembali</button> --}}
 					</div>
 				</div>  
 			</div>
