@@ -58,7 +58,9 @@
         <div class="row justify-content-md-center">
           <div class="col-md-10">
             <div class="contents text-center">
-              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Lipat Gandakan keberkahan dengan bersedekah</h1>
+              <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">LIPAT GANDAKAN KEBERKAHAN DENGAN BERSEDEKAH
+
+            </h1>
               <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">“Demi Yang Mengutusku dengan hak, Allah tidak akan menyiksa pada hari kiamat nanti orang yang menyayangi anak yatim, lemah lembut pembicaraan dengannya, menyayangi keyatiman dan kelemahannya.”
 
                 (HR. Thabrani dari Abu Hurairah)</p>
