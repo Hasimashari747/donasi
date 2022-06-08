@@ -26,6 +26,37 @@
                                 <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}"
                                 id="exampleFormControlInput1" placeholder="">
                             </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">password</label>
+                                <input type="text" class="form-control" name="password" value="{{ Auth::user()->password }}"
+                                id="exampleFormControlInput1" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">alamat</label>
+                                <input type="text" class="form-control" name="alamat" value="{{ Auth::user()->alamat }}"
+                                id="exampleFormControlInput1" placeholder="">
+                            </div>
+                           
+                            <div class="mb-3">
+                                 
+                            <label for="jenis_kelamin">jenis kelamin</label>
+
+                            <select name="jenis_kelamin" class="form-control" id="jenis_kelamin">
+                              <option value="L">laki-laki</option>
+                              <option value="P">perempuan</option>
+                            </select>   
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Tanggal Lahir</label>
+                                <input type="date" class="form-control" name="tgl_lahir" value="{{ Auth::user()->tgl_lahir }}"
+                                id="exampleFormControlInput1" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Nomor hp</label>
+                                <input type="text" class="form-control" name="no_hp" value="{{ Auth::user()->no_hp }}"
+                                id="exampleFormControlInput1" placeholder="">
+                            </div>
                             <div class="card-text"> 
                               <button class="btn btn-success">Update</button>
                             </div>

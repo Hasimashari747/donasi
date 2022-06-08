@@ -26,6 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($donatur as $item)
                                 <tr>
                                     <td>{{ $item->id }}</td>

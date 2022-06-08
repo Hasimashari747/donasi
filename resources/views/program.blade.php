@@ -37,7 +37,10 @@
 							@foreach($programs as $program)
 
 							@php
-								$sumJumlahDonationId = App\Models\Donation::where('program_id', $program->id)->sum('jumlah_donasi');				
+								$sumJumlahDonationId = 
+								App\Models\Donation::where('program_id', $program->id)
+														->where('bukti_donation', '!=', '')
+														->sum('jumlah_donasi');
 							@endphp
 
 								<tr>
