@@ -56,14 +56,21 @@
 										{{ $sumJumlahDonationId }}
 									</td>
 									<td>{{ $program->target_donation}}</td>
-									<td> 	
-										<a href="{{ route('program.show', $program->id) }}" class="btn btn-warning"><i class="fas fa-solid fa-eye"></i>Lihat</a>
-										<a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-lg">Edit</a>  
-										<form action="{{ route('program.destroy', $program->id) }}" method="post">
-										@csrf
-										@method('DELETE')
-											<button class="btn btn-danger">Hapus</button>
-										</form>
+								
+									<td> 
+										@if ($sumJumlahDonationId == $program->target_donation)
+
+											<span class="badge rounded-pill bg-danger">Dana telah terkumpul</span>
+											<a href="{{ route('program.show', $program->id) }}" class="btn btn-info">Detail</a>
+										@else	
+											<a href="{{ route('program.show', $program->id) }}" class="btn btn-warning"><i class="fas fa-solid fa-eye"></i>Lihat</a>
+											<a href="{{ route('program.edit', $program->id) }}" class="btn btn-info btn-lg">Edit</a>  
+											<form action="{{ route('program.destroy', $program->id) }}" method="post">
+											@csrf
+											@method('DELETE')
+												<button class="btn btn-danger">Hapus</button>
+											</form>
+										@endif
 									</td>
 								</tr>
 							@endforeach
