@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -74,9 +76,23 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->user()->update(
-            $request->all()
-        );
+
+        $userId = User::find($id);
+
+        $attr = $request->all();
+
+        $image = $request->file('image');
+
+        if (request()->file('image')) {
+            Storage::delete($userId->image);
+            $banner = $request->file('image')->storeAs('/images',$image->hashName());
+        } else {
+            $banner = $userId->image;
+        }
+        
+        $attr['image'] = $banner;
+        $userId->update($attr);
+
         Alert::success('Data diedit', 'Berhasil mengedit data');
         return back()->with('success','Berhasil Diupdate');
     }

@@ -29,9 +29,7 @@
           <div class="icon-list navbar-collapse">
             <ul class="navbar-nav">
               
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
+             
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login')}}">Login</a>
               </li>

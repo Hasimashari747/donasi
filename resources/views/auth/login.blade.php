@@ -124,7 +124,7 @@
 										<div class="text-center mt-3">
 											{{-- <a href="index.html" class="btn btn-lg btn-primary">Sign in</a> --}}
 											<button type="submit" class="btn btn-lg btn-primary">Masuk</button><br> <br>
-                                            <span>Silahkan daftarkan akun anda <a href="{{ route('register')}}">Disini</a></span>
+                                            {{-- <span>Silahkan daftarkan akun anda <a href="{{ route('register')}}">Disini</a></span> --}}
 										</div>
 									</form>
 								</div>

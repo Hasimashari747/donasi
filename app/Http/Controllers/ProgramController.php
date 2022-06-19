@@ -96,7 +96,8 @@ class ProgramController extends Controller
      */
     public function update(ProgramRequest $request, $id)
     {
-          //get data Blog by ID
+
+    //get data Blog by ID
     $blog = Program::findOrFail($id);
     // dd($blog->banner);
     $image = $request->file('banner');
@@ -112,41 +113,6 @@ class ProgramController extends Controller
     $attr['banner'] = $banner;
     
     $blog->update($attr);
-
-    // if($request->file('image') == "") {
-
-    //     $blog->update([
-    //         'nama_panti'     => $request->nama_panti,
-    //         'deskripsi'   => $request->deskripsi,
-    //         'lokasi'   => $request->lokasi,
-    //         'kontak'   => $request->kontak,
-    //         'nomor_rekening'   => $request->nomor_rekening,
-    //         'target_donation'   => $request->target_donation
-    //     ]);
-
-    // } else {
-
-    //     //hapus old image
-    //     Storage::disk('local')->delete('/blogs/'.$blog->image);
-
-    //     //upload new image
-    //     $image = $request->file('image');
-    //     $image->storeAs('public/blogs', $image->hashName());
-
-    //     $blog->update([
-    //         'banner'     => $image->hashName(),
-    //         'nama_panti'     => $request->nama_panti,
-    //         'deskripsi'   => $request->deskripsi,
-    //         'lokasi'   => $request->lokasi,
-    //         'kontak'   => $request->kontak,
-    //         'nomor_rekening'   => $request->nomor_rekening,
-    //         'target_donation'   => $request->target_donation
-    //     ]);
-
-    //     return redirect()->route('program.index');
-
-    // }
-
 
     Alert::success('Data diedit', 'Berhasil mengedit data');
     return redirect()->route('program.index');

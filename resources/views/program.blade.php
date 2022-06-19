@@ -26,7 +26,7 @@
 								<th>lokasi</th>
 								<th>kontak</th>
 								<th>nomor rekening</th>
-								<th>Donatur Terkumpul</th>
+								<th>Donasi Terkumpul</th>
 								<th>Target Donasi</th>
 								<th>Aksi</th>
 							</tr>

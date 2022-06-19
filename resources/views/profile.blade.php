@@ -14,7 +14,7 @@
                             @method('PUT')
                             <div class="mb-3">
                                 <input accept="image/*" name="image" type="file" id="imgInp"/>
-                                <img id="blah" src="{{asset(Auth::user()->image)}}"  alt="Your image" class="rounded-circle" width="123"/>
+                                <img id="blah" src="{{ url('storage/', Auth::user()->image) }}"  alt="Your image" class="rounded-circle" width="123"/>
                             </div>  
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -26,11 +26,11 @@
                                 <input type="text" class="form-control" name="name" value="{{ Auth::user()->name }}"
                                 id="exampleFormControlInput1" placeholder="">
                             </div>
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">password</label>
                                 <input type="text" class="form-control" name="password" value="{{ Auth::user()->password }}"
                                 id="exampleFormControlInput1" placeholder="">
-                            </div>
+                            </div> --}}
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">alamat</label>
                                 <input type="text" class="form-control" name="alamat" value="{{ Auth::user()->alamat }}"

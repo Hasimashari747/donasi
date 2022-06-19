@@ -38,7 +38,9 @@
                                     <td>{{ $item->email }}</td>
                                     {{-- <td>{{ $item->password }}</td> --}}
                                     <td>{{ ($item->role == 1) ? 'admin' : 'user' }}</td>
-                                    <td>{{ $item->image }}</td>
+                                    <td>
+                                        <img src="{{ ($item->image == null) ? asset('assets/img/no_image.jpg') : url('storage/', $item->image ) }}" width="200">
+                                    </td>
                                     <td>{{ $item->alamat }}</td>
                                     <td>{{ $item->jenis_kelamin }}</td>
                                     <td>{{ $item->tgl_lahir }}</td>
